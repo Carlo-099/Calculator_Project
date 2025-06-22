@@ -1,0 +1,262 @@
+<!-- Main HTML structure for the Quiz App Home Page -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta and Title -->
+        <title>Quiz.Algordo</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Inline Styles for Home Page Design -->
+        <style>
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins,' sans-serif; 
+ }
+ 
+ body{
+     color: #fff;
+     background: #090909;
+     overflow: hidden; /*Para ito sa container para hindi lumabas yung sliding sa baba*/
+ }
+ 
+ .header{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     padding: 20px 10%;
+     background:linear-gradient(45deg, #212F3D  , #3498DB );
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     z-index: 100;
+ }
+ .logo{
+     font-size: 32px;
+     color: #fff;
+     text-decoration: none;
+     font-weight: 700;
+     filter: drop-shadow(0 0 5px #090909);
+ }
+ .logo:hover{
+    transform: rotate(70deg);
+ }
+ .navbar a{
+     font-size: 18px;
+     color: #283747  ;
+     background-color:#5499C7;
+     border:  2px solid #fff;
+     padding: 15px;
+     border-radius: 10px;
+     text-decoration: none;
+     font-weight: 500;
+     margin-left: 35px;
+     font-family:fantasy;
+     font-size:20px ;
+     transition: .3s;
+ }
+ .navbar a:hover,
+ .navbar a.active{
+     color:#fff;
+ }
+ 
+ main{
+   min-height: 100vh;
+   background:linear-gradient(to right, #17202A  , #3498DB );
+   background-size: cover;
+   background-position: center;
+   pointer-events: auto;
+   transition: .3 ease;
+ }
+ .main.active {
+     filter: blur(70%);
+     filter: brightness(10%);
+     pointer-events: none; /*Para hindi ka makapindot sa ibang part ng website*/
+ }
+ .container{
+     display: flex;
+     height: 100vh;
+     width: 200%;
+ }
+ 
+ .home{
+     position: relative; /*  meron ding (position: relative; left: -50%;) sa line 184 para maitago ang container */
+     width: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .home-content{
+     max-width: 600px;
+     display: flex ;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     margin: auto;
+ }
+ .home-content img {
+    width: 500px;
+    height: 400px;
+    border-radius: 100px;
+    margin: 10px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    animation: glow 2s infinite alternate; /* Adjust the duration and other properties as needed */
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    }
+    to {
+        box-shadow: 0 0 40px rgba(0, 255, 255, 1);
+    }
+}
+
+ .home-content h1{
+    text-align: center;
+     font-size: 78px;
+     font-weight: 700;
+     text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+ }
+ .home-content p{
+     font-size: 16px;
+     text-align: center;
+     text-shadow: 0 0 10px rgba (0, 0, 0, .3);
+     margin-bottom: 30px;
+ 
+ }
+ .home-content .startBtn{
+     width: 190px;
+     height: 55px;
+     color: #283747;
+     background-color:#5499C7;
+     border:  2px solid #fff;
+     outline: none;
+     border-radius: 6px;
+     box-shadow: 0 0 10px #515151;
+     font-size: 30px;
+     letter-spacing: 1px;
+     font-weight: 600;
+     font-family: fantasy;
+     cursor: pointer;
+     transition: .5s;
+ }
+ .home-content .startBtn:hover{
+     background: linear-gradient(45deg, #40E0D0 , #6495ED );
+     color: #fff;
+     border:0;
+     box-shadow: none;
+ }
+
+ .popup-info1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 60%;
+    height: 40%;
+    background:transparent;
+    border-radius: 10px;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .1s ease;
+}
+
+.popup-info1.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.start-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-btn button {
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    background-size: cover;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.start-btn button:hover {
+    transform: scale(1.1);
+}
+
+.startBtn1 {
+    background-image: url('./Pictures/math.jpg');
+}
+
+.startBtn2 {
+    background-image: url('./Pictures/pe.jpg');
+}
+
+.startBtn3 {
+    background-image: url('./Pictures/science.jpg');
+}
+
+        </style>
+
+
+    </head>
+    <body>
+        <!-- Main Content Wrapper -->
+        <main class="main">
+            <!-- Header Section: Logo and Navigation -->
+            <header class="header">
+                <!-- Logo Image -->
+                <a href="#" class="logo"><img src="./Pictures/Settings.jpg" alt="Quiz" width="45px"></a>
+                <!-- Navigation Bar -->
+                <nav class="navbar">
+                    <a href="./Apple.html" class="active">Home</a>
+                    <a href="Login.html">Log-in</a>
+                    <a href="#">Create Account</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </header>
+            <!-- Main Container for Sections -->
+            <div class="container">
+                <!-- Quiz Section Placeholder (for future content) -->
+                <section class="quiz-section1">
+
+                </section>
+                <!-- Home Section: Main Welcome and Start Button -->
+                <section class="home">
+                    <div class="home-content">
+                        <!-- Quiz Logo Image -->
+                        <img src="https://th.bing.com/th/id/R.b290f78e176c2057a43dbfed25fdecb6?rik=BYrD%2b6zF%2f%2fsJ9g&riu=http%3a%2f%2feasyquiz.co.uk%2fwp-content%2fuploads%2f2021%2f01%2fNew-Quiz-LOGO.png&ehk=GasvmG0nV5UUHyvUCotWWDOGnoH9rzQLFDGSk1ypPEY%3d&risl=&pid=ImgRaw&r=0" width="450px"/>
+                        <!-- Project Description -->
+                        <p>Personal Project Quiz: Algordo, Wowo </p>
+                        <!-- Start Button -->
+                        <button class="startBtn" >Lets Start</button>
+                    </div>
+                </section>
+            </div>
+         </main>
+
+         <div class="popup-info1">
+            <div class="start-btn">
+                <!-- Math Quiz Button -->
+                <a href="./Math.Html" target="_self"><button class="startBtn1"></button></a>
+                <!-- PE Quiz Button -->
+                <a href="./PE.Html" target="_self"><button class="startBtn2"></button></a>
+                <!-- Science Quiz Button -->
+                <a href="./Science.Html" target="_self"><button class="startBtn3"></button></a>
+            </div>
+        </div>
+    
+         <script src="Js/Apple.js"></script>
+
+    </body>
+</html>

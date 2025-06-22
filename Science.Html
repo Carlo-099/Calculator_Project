@@ -1,0 +1,73 @@
+<!-- Main HTML structure for the Science Quiz Page -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta and Title -->
+        <title>Algordo Quiz</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="Css/Science.Css">
+    </head>
+    <body>
+        <!-- Main Content Wrapper -->
+        <main class="main">
+            <!-- Main Container for Quiz Sections -->
+            <div class="container">
+                <!-- Quiz Questions Section -->
+                <section class="quiz-section">
+                    <!-- Quiz Box: Contains the quiz content -->
+                    <div class="quiz-box">
+                        <!-- Quiz Title -->
+                        <h1>SCIENCE QUIZ</h1>
+                        <!-- Quiz Header: Details and Score -->
+                        <div class="quiz-header">
+                            <span>Quiz for Math</span>
+                            <span class="header-score">Score: 0 / 5</span>
+                        </div>
+                        <!-- Quiz Question and Options -->
+                        <h2 class="question-text">What is the sum of 7 and 5?</h2>
+                        <div class="option-list">
+                            <!-- Options will be populated here dynamically -->
+                        </div>
+                        <!-- Quiz Footer: Question Count and Next Button -->
+                        <div class="quiz-footer">
+                            <span class="question-total">1 of 5 Questions</span>
+                            <button class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <!-- Quiz Result Section -->
+                    <div class="result-box">
+                        <h2>RESULT</h2>
+                        <div class="percentage-container">
+                            <!-- Circular Progress for Score -->
+                            <div class="circular-progress">
+                                <span class="progress-value">0%</span>
+                            </div>
+                            <!-- User's Score Text -->
+                            <span class="score-text">Your Score 0 out of 5</span>
+                        </div>
+                        <!-- Result Buttons -->
+                        <div class="buttons">
+                            <button class="tryAgain-btn">Try Again</button>
+                            <a href="Apple.html" target="_self"><button class="goHome-btn">Home</button></a>
+                        </div>
+                    </div>
+                </section>
+                <!-- Home Section: Shown before starting the quiz -->
+                <section class="home">
+                    <div class="home-content">
+                        <!-- Science Icon Image -->
+                        <img src="./Pictures/light-bulb.png" width="200px"/>
+                        <!-- Description -->
+                        <p>Quiz . Algordo Carlo Jay Qilingan, Wowo </p>
+                        <!-- Start Quiz Button -->
+                        <button class="start-btn">Start Quiz</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <!-- JavaScript Files for Quiz Functionality -->
+        <script src="Js/Science.Js"></script>
+        <script src="Js/ScienceQ.js"></script>
+    </body>
+</html>
